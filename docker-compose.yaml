@@ -1,0 +1,40 @@
+services:
+  db:
+    image: rapidfort/microsoft-sql-server-2019-ib:latest
+    container_name: sqlserver
+    environment:
+      SA_PASSWORD: "{YOUR_PASS_HERE}"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./mssql_scripts:/var/opt/mssql/scripts
+    healthcheck:
+      test: [ "CMD", "/opt/mssql-tools/bin/sqlcmd", "-S", "localhost", "-U", "sa", "-P", "{YOUR_PASS_HERE}", "-Q", "SELECT 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    command: >
+      bash -c "
+        /opt/mssql/bin/sqlservr & 
+        pid=$$!;
+        echo 'Waiting for SQL Server to start...';
+        sleep 20;
+        for f in /var/opt/mssql/scripts/*.sql; do
+          echo 'Running script: $$f';
+          /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P {YOUR_PASS_HERE} -d master -i $$f;
+        done;
+        wait $$pid"
+
+  backend:
+    build:
+      context: ./DocumentsReaderServer
+      dockerfile: Dockerfile
+    container_name: documents-reader-backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - ./DocumentsReaderServer/.env

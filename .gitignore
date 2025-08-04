@@ -1,0 +1,78 @@
+*.pem
+*.key
+.env
+
+.idea/
+.venv/
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+.DS_Store
+*.log
+
+DocumentsReaderServer/.env
+docker-compose.yaml
+DocumentsReaderServer/dockerfile
+
+# Flutter/Dart/Pub related
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+build/
+pubspec.lock
+
+# Android Studio related
+.idea/
+*.iml
+*.ipr
+*.iws
+*.log
+
+# Android-specific
+android/.gradle/
+android/captures/
+android/.idea/
+android/local.properties
+android/.DS_Store
+android/build/
+*.jks
+
+# iOS/macOS (if applicable)
+ios/Flutter/Generated.xcconfig
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/.generated/
+ios/build/
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/build/
+macos/Runner.xcworkspace/
+macos/.generated/
+
+# VS Code
+.vscode/
+
+# IntelliJ
+*.swp
+*.swo
+*.tmp
+
+# Misc
+.DS_Store
+*.bak
+*.tmp
+*.orig
+*.log
+
+# APKs
+*.apk
+!releases_app/*.apk
+*.ipa
+
+
+# Symbol files
+*.dSYM

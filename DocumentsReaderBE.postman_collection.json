@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "0b84337c-0d9f-4800-9fdd-c976dc0c7e1c",
+		"name": "DocumentsReaderBE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "425977"
+	},
+	"item": [
+		{
+			"name": "HealthCheck Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://{{baseURL}}:{{port}}/healthcheck/status"
+			},
+			"response": []
+		},
+		{
+			"name": "HealthCheck Database",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://{{baseURL}}:{{port}}/healthcheck/database"
+			},
+			"response": []
+		},
+		{
+			"name": "Register Email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"aaaa@bbb.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://{{baseURL}}:{{port}}/auth/register-email",
+				"description": "Generated from cURL: curl -X POST https://localhost:8000/auth/register_email \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"email\": \"teste@email.com\"}' \\\r\n  -k\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Confirm Email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"aaaa@bbb.com\", \"code\": \"83382\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://{{baseURL}}:{{port}}/auth/confirm-email",
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/auth/confirm-email \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"email\": \"john.doe@example.com\", \"code\": \"72256\"}'\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Enrol",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "Test",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "aaaa@bbb.com",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/Victor Viola/Pictures/Selfie Test.jpg"
+						}
+					]
+				},
+				"url": "https://{{baseURL}}:{{port}}/auth/enrol",
+				"description": "Generated from cURL: curl -X POST https://localhost:8000/auth/enrol \\\r\n  -F \"name=Victor Viola\" \\\r\n  -F \"company=VWFS\" \\\r\n  -F \"email=teste@email.com\" \\\r\n  -F \"photo=@/caminho/para/sua/selfie.jpg\" \\\r\n  -k\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Send Email Verify Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"aaaa@bbb.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://{{baseURL}}:{{port}}/auth/send-email-verify-code",
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/documents \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"userId\": \"9a4182bd-3843-44bb-b877-fc56d08e387f\"}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Verify Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"aaaa@bbb.com\", \"code\":\"49539\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://{{baseURL}}:{{port}}/auth/generate-verify-token",
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/documents \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"userId\": \"9a4182bd-3843-44bb-b877-fc56d08e387f\"}'"
+			},
+			"response": []
+		},
+		{
+			"name": "List Documents",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"aaaa@bbb.com\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://{{baseURL}}:{{port}}/documents/list",
+				"description": "Generated from cURL: curl -X POST http://localhost:8000/documents \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\"userId\": \"9a4182bd-3843-44bb-b877-fc56d08e387f\"}'"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "8000",
+			"type": "string"
+		}
+	]
+}
