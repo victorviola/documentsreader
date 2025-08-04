@@ -44,7 +44,7 @@ At this stage, the application has been tested exclusively on Android devices, w
 openssl req -x509 -newkey rsa:4096 -keyout cert.key -out cert.pem -days 365 -nodes
 ```
 
-> Place both `cert.pem` and `cert.key` inside the `\DocumentsReaderServer` folder
+> **Place both `cert.pem` and `cert.key` inside the `\DocumentsReaderServer` folder**
 
 4. Ensure that your Android device is on the **same local network** as your backend server
 
@@ -67,6 +67,13 @@ docker compose up --build
 
 ## Quick Test
 
+**Find your local network IP address**:
+   - On your computer or server running the backend, open a terminal or command prompt.
+   - Run `ipconfig` (Windows) or `ifconfig`/`ip addr` (Linux/Mac) to find the IPv4 address of your local network (e.g., `192.168.x.x`).
+   - Ensure your Android device is connected to the same Wi-Fi network as the backend server.
+   - The dockerfile of the server is setup to run in the port 8000
+   - \[Optional]Open the app, navigate to **Settings** (top-right corner) on the home screen, and enter the **IP address of the backend** to establish connectivity.
+
 Use `curl` to test the `/auth/register-email` endpoint:
 
 ```bash
@@ -74,6 +81,8 @@ curl --location 'https://localhost:8000/auth/register-email' \
 --header 'Content-Type: application/json' \
 --data-raw '{"email": "aaaa@bbb.com"}'
 ```
+
+**There is a JSON collection in the root folder of this project.**
 
 ---
 
