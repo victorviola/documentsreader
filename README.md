@@ -1,7 +1,14 @@
 # iProov Documents Reader
 
 
-[![iProov Documents Reader Demo](https://img.youtube.com/vi/Ea41xOrLWbs/0.jpg)](https://www.youtube.com/watch?v=Ea41xOrLWbs)
+## Demo
+Watch a quick demo of the iProov Documents Reader, showcasing biometric login and document access:
+
+<div style="display: flex; justify-content: center;">
+    <a href="https://www.youtube.com/watch?v=Ea41xOrLWbs">
+        <img src="https://img.youtube.com/vi/Ea41xOrLWbs/hqdefault.jpg" alt="iProov Documents Reader Demo" style="max-width: 100%;">
+    </a>
+</div>
 
 
 A secure document access platform powered by **iProov's Genuine Presence Assurance (GPA)** technology. This application eliminates the need for passwords by authenticating users through advanced **biometric facial verification**, ensuring a seamless and secure user experience.
