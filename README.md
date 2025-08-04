@@ -27,16 +27,16 @@ At this stage, the application has been tested exclusively on Android devices, w
 
 ## Prerequisites
 
-1. Edit the `.env` file in `\DocumentsReaderServer`:
+1. Edit the `docker-compose.yaml`:
+
+   * Update the **DB password** under `services.db.environment.SA_PASSWORD`
+   * The same password must be present in the `.env` file in the next step
+
+2. Edit the `.env` file in `\DocumentsReaderServer`:
 
    * Edit and add your **iProov API key and secret**
    * Edit and add your **SMTP server** credentials
    * Edit password for the **database connection string**
-
-2. Edit the `docker-compose.yaml`:
-
-   * Update the **DB password** under `services.db.environment.SA_PASSWORD`
-   * The same password must be present in the `.env` file
 
 3. ⚠️ **Attention** Generate a self-signed certificate (required for HTTPS):
 
