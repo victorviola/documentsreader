@@ -22,7 +22,7 @@ Watch a quick demo of the iProov Documents Reader, showcasing biometric login an
 
 ## Backend Features
 
-* Developed with **Python** and **FastAPI**
+* Developed with **Python** and **FastAPI** supported by a **Microsoft SQL Server**
 * Uses **HTTPS** with self-signed certificates
 * Enables **GPA-based registration and login** without passwords
 * Stores only **non-sensitive data**: email, name, and company
@@ -111,6 +111,7 @@ The app **does not store any user data** locally. Its primary purpose is to allo
 - The APK provided has **not been signed** and is a **debug release** build.
 - The app has only been tested on a **Redmi 10C** device running **Android 13**.
 - The app is **not perfect** and has been tested to the extent possible. There is significant room for improvement, particularly in the user interface (UI).
+- App is ignoring problems with self-signed certificates for testing purposes. To deploy this App in production, some changes MUST be made.
 
 ## How to Run the App
 
