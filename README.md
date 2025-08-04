@@ -29,7 +29,7 @@ At this stage, the application has been tested exclusively on Android devices, w
 
 1. Edit the `docker-compose.yaml`:
 
-   * Update the **DB password** under `services.db.environment.SA_PASSWORD`
+   * Create a **DB password** and replace it in the placeholder {YOUR_PASS_HERE} - Must be a strong password (min 8 digits + numbers + special char).
    * The same password must be present in the `.env` file in the next step
 
 2. Edit the `.env` file in `\DocumentsReaderServer`:
